@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "puzzle"
+version = "0.1.0"
+description = "Puzzle"
+authors = ["Danny Willems <danny@badaas.be>"]
+license = "GPL"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^5.0"
+psycopg2-binary = "*"
+python-decouple = "^3.8"
+python-dateutil = "*"
+ccxt = "*"
+influxdb-client = "*"
+# Middleware
+# hiredis
+# From doc:
+# > For faster performance, install Redis with hiredis support. This provides a
+# > compiled response parser, and for most cases requires zero code changes. By
+# > default, if hiredis >= 1.0 is available, redis-py attempts to use it for
+# > response parsing.
+# Source: https://redis.io/docs/latest/develop/connect/clients/python/
+redis = { version = "*", extras = ["hiredis"] }
+
+# For crypto addresses
+base58 = "*"
+
+# For Mina GraphQL Explorer
+gql = "*"
+
+[tool.poetry.group.dev.dependencies]
+# For testing
+pytest = "*"
+# See https://github.com/astral-sh/ruff
+ruff = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
