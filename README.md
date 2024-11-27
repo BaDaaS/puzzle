@@ -61,3 +61,8 @@ development of the private components.
 ## License
 
 GPL 3.0
+
+## Why Puzzle?
+
+That's the puzzle!
+Reference: [How I met your mother](https://how-i-met-your-mother.fandom.com/wiki/Puzzles)
