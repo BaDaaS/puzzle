@@ -10,4 +10,6 @@
 ```
 pyenv install 3.13
 poetry install
+cp -f example.env .env
 ```
+
