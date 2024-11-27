@@ -18,7 +18,7 @@ The enterprise version is actively used by different successful companies in
 different areas:
 - BaDaaS - a cryptography laboratory based in Belgium
 - LeakIX - a cybersecurity company providing an overview of business vulnerable
-  assets.
+  assets on the Internet.
 
 ## Cypherpunk movement
 
