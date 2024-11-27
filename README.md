@@ -31,7 +31,7 @@ Manifesto's:
 ## Enterprise
 
 If you want to reach out to us for an enterprise version or enterprise
-features, send us an email 
+features, send us an email at contact@badaas.be.
 
 ## Technological stack
 
