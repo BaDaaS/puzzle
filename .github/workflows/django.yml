@@ -22,7 +22,10 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
-        poety install
+        pip install pipx
+        pipx ensurepath
+        pipx install poetry
+        poetry install
     - name: Run Tests
       run: |
         poetry run python manage.py test
