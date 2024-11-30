@@ -33,6 +33,10 @@ jobs:
     - name: Install Dependencies
       run: |
         poetry install
+    - name: Check linter and formatter
+      run: |
+        poetry run ruff check
+        poetry run ruff format
     - name: Use SQLite3 db backend for tests
       run: |
         cp example.env .env
