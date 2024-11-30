@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.13]
+        python-version: ["3.13"]
+        poetry-version: ["latest"]
 
     steps:
     - uses: actions/checkout@v4
@@ -20,13 +21,24 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
-        cache: "poetry"
+    - name: Install poetry
+      uses: abatilo/actions-poetry@v3
+      with:
+        poetry-version: ${{ matrix.poetry-version }}
+    - uses: actions/cache@v3
+      name: Define a cache for the virtual environment based on the dependencies lock file
+      with:
+        path: ./.venv
+        key: venv-${{ hashFiles('poetry.lock') }}
     - name: Install Dependencies
       run: |
-        pip install pipx
-        pipx ensurepath
-        pipx install poetry
         poetry install
+    - name: Use SQLite3 db backend for tests
+      run: |
+        cp example.env .env
+    - name: Run Django migrations
+      run: |
+        poetry run python manage.py migrate
     - name: Run Tests
       run: |
         poetry run python manage.py test
