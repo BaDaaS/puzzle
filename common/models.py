@@ -14,10 +14,14 @@ class Currency(models.Model):
         (TYPE_FIAT, TYPE_FIAT.upper()),
     ]
     symbol = models.CharField(max_length=LENGTH_CURRENCY_SYMBOL, unique=True)
-    utf8_symbol = models.CharField(max_length=LENGTH_CURRENCY_SYMBOL_UTF8, null=True)
+    utf8_symbol = models.CharField(
+        max_length=LENGTH_CURRENCY_SYMBOL_UTF8, null=True
+    )
     name = models.CharField(max_length=LENGTH_CURRENCY_NAME)
     currency_type = models.CharField(max_length=16, choices=CURRENCY_TYPES)
-    decimals = models.IntegerField(default=LENGTH_CURRENCY_DECIMALS_DEFAULT, null=False)
+    decimals = models.IntegerField(
+        default=LENGTH_CURRENCY_DECIMALS_DEFAULT, null=False
+    )
 
     class Meta:
         verbose_name_plural = "Currencies"

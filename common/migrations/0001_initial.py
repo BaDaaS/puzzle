@@ -27,7 +27,8 @@ class Migration(migrations.Migration):
                 (
                     "currency_type",
                     models.CharField(
-                        choices=[("Crypto", "CRYPTO"), ("FIAT", "FIAT")], max_length=16
+                        choices=[("Crypto", "CRYPTO"), ("FIAT", "FIAT")],
+                        max_length=16,
                     ),
                 ),
                 ("decimals", models.IntegerField(default=2)),

@@ -76,7 +76,10 @@ WSGI_APPLICATION = "puzzle.wsgi.application"
 DATABASE_ENGINE = config("DB_ENGINE")
 if DATABASE_ENGINE == "django.db.backends.sqlite3":
     DATABASES = {
-        "default": {"ENGINE": config("DB_ENGINE"), "NAME": BASE_DIR / config("DB_NAME")}
+        "default": {
+            "ENGINE": config("DB_ENGINE"),
+            "NAME": BASE_DIR / config("DB_NAME"),
+        }
     }
 elif DATABASE_ENGINE == "django.db.backends.postgresql_psycopg2":
     DATABASES = {
@@ -149,7 +152,9 @@ DEFAULT_NAME_FORMAT_ACCOUNT_EXPENSES = "{0} ({1} - {2})"
 
 # ----------------- TRADING APP -----------------
 # Crypto Exchange Trading
-CRYPTO_EXCHANGE_KRAKEN_API_KEY = config("CRYPTO_EXCHANGE_KRAKEN_API_KEY", default=None)
+CRYPTO_EXCHANGE_KRAKEN_API_KEY = config(
+    "CRYPTO_EXCHANGE_KRAKEN_API_KEY", default=None
+)
 CRYPTO_EXCHANGE_KRAKEN_SECRET_KEY = config(
     "CRYPTO_EXCHANGE_KRAKEN_SECRET_KEY", default=None
 )
