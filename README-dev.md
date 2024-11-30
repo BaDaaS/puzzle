@@ -11,6 +11,8 @@
 pyenv install 3.13
 poetry install
 cp -f example.env .env
+# Create a superuser
+poetry run python manage.py createsuperuser
 ```
 
 
