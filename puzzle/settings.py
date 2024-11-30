@@ -73,18 +73,28 @@ WSGI_APPLICATION = "puzzle.wsgi.application"
 # ----------------- DATABASE -----------------
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": config("DB_ENGINE"),
-        "OPTIONS": {"options": "-c search_path=puzzle"},
-        "NAME": config("DB_NAME"),
-        "USER": config("DB_USER"),
-        "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config("DB_HOST"),
-        "PORT": config("DB_PORT", cast=int),
-        "ATOMIC_REQUESTS": True,
+DATABASE_ENGINE = config("DB_ENGINE")
+if DATABASE_ENGINE == "django.db.backends.sqlite3":
+    DATABASES = {
+        "default": {
+            "ENGINE": config("DB_ENGINE"),
+            "NAME": BASE_DIR / config("DB_NAME")
+        }
     }
-}
+elif DATABASE_ENGINE == "django.db.backends.postgresql_psycopg2":
+    DATABASES = {
+        "default": {
+            "ENGINE": config("DB_ENGINE"),
+            "NAME": config("DB_NAME"),
+            "USER": config("DB_USER"),
+            "PASSWORD": config("DB_PASSWORD"),
+            "HOST": config("DB_HOST"),
+            "PORT": config("DB_PORT"),
+        }
+    }
+else:
+    raise ValueError(f"Unsupported database engine: {DATABASE_ENGINE}")
+
 # ----------------- DATABASE -----------------
 
 
