@@ -1,4 +1,4 @@
-from accounts.models import Account, Entity
+from accounting.models import Account, Entity
 from common.models import Currency
 from datetime import datetime
 from decimal import Decimal
