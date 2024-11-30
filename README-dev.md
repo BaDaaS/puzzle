@@ -1,6 +1,6 @@
 # For developers
 
-## Prerequisites
+## Pre-requisites
 
 - Use [pyenv](https://github.com/pyenv/pyenv/) to install the require Python version.
 - [Poetry](https://python-poetry.org/docs/) to manage Python dependencies.
