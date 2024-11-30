@@ -5,22 +5,73 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('accounting', '0001_initial'),
-        ('common', '0001_initial'),
+        ("accounting", "0001_initial"),
+        ("common", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Account',
+            name="Account",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=128, unique=True)),
-                ('account_type', models.CharField(choices=[('Asset', 'ASSET'), ('Liabilities', 'LIABILITIES'), ('Equity', 'EQUITY'), ('Revenue', 'REVENUE'), ('Receivable', 'RECEIVABLE'), ('Payable', 'PAYABLE'), ('Expenses', 'EXPENSES')], max_length=32)),
-                ('subtype', models.CharField(blank=True, choices=[('SavingAccount', 'Saving Account'), ('Bank', 'Bank'), ('Cash', 'Cash'), ('CreditCard', 'Credit card'), ('Paypal', 'Paypal'), ('CryptoExchange', 'Crypto exchange'), ('Transit', 'Transit'), ('TermDepositAccount', 'Term deposit account'), ('CryptoWallet', 'Crypto wallet')], max_length=128, null=True)),
-                ('currency', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='common.currency')),
-                ('entity', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='accounting.entity')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=128, unique=True)),
+                (
+                    "account_type",
+                    models.CharField(
+                        choices=[
+                            ("Asset", "ASSET"),
+                            ("Liabilities", "LIABILITIES"),
+                            ("Equity", "EQUITY"),
+                            ("Revenue", "REVENUE"),
+                            ("Receivable", "RECEIVABLE"),
+                            ("Payable", "PAYABLE"),
+                            ("Expenses", "EXPENSES"),
+                        ],
+                        max_length=32,
+                    ),
+                ),
+                (
+                    "subtype",
+                    models.CharField(
+                        blank=True,
+                        choices=[
+                            ("SavingAccount", "Saving Account"),
+                            ("Bank", "Bank"),
+                            ("Cash", "Cash"),
+                            ("CreditCard", "Credit card"),
+                            ("Paypal", "Paypal"),
+                            ("CryptoExchange", "Crypto exchange"),
+                            ("Transit", "Transit"),
+                            ("TermDepositAccount", "Term deposit account"),
+                            ("CryptoWallet", "Crypto wallet"),
+                        ],
+                        max_length=128,
+                        null=True,
+                    ),
+                ),
+                (
+                    "currency",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="common.currency",
+                    ),
+                ),
+                (
+                    "entity",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="accounting.entity",
+                    ),
+                ),
             ],
         ),
     ]
