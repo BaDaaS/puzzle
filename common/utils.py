@@ -1,5 +1,81 @@
+from accounting.models import Entity
+from common.influxdb import PublishableData as PublishableInfluxData
 from common.models import Currency
 from decimal import Decimal
+from influxdb_client import Point
+from typing import Optional
+
+
+class AbstractBalance(PublishableInfluxData):
+    def __init__(
+        self,
+        d: Decimal,
+        c: Currency,
+        timestamp_utc_ns: int,
+        source: str,
+        entity: Optional[Entity],
+    ):
+        assert isinstance(d, Decimal)
+        assert isinstance(c, Currency)
+        assert isinstance(timestamp_utc_ns, int)
+        assert isinstance(source, str)
+        assert isinstance(entity, Entity) or entity is None
+        self.d = d
+        self.c = c
+        self.entity = entity
+        self.timestamp_utc_ns = timestamp_utc_ns
+        self.source = source
+
+    def to_influxdb(self, measurement):
+        """
+        Tags:
+        - currency: currency symbol
+        - entity: entity name
+        - source: source of the balance
+
+        Fields:
+        - balance: balance
+        """
+        balance_float = float(self.d)
+        # We force to have an entity
+        assert self.entity is not None
+        return (
+            Point(measurement)
+            .tag("currency", self.c.symbol)
+            .tag("entity", self.entity.name)
+            .tag("source", self.source)
+            .field("balance", balance_float)
+            .time(self.timestamp_utc_ns)
+        )
+
+    def set_on_redis(self, redis_client, prefix_key: str) -> bool:
+        key = f"{prefix_key}/{self.source}-{self.entity.name}"
+        j = {
+            "p": str(self.d),
+            "c": self.c.symbol,
+            "t": self.timestamp_utc_ns,
+            "s": self.source,
+            "e": self.entity.name,
+        }
+        return redis_client.hset(key, mapping=j)
+
+    @classmethod
+    def from_redis(
+        cls, redis_client, prefix_key: str, source: str, entity: Entity
+    ):
+        key = f"{prefix_key}/{source}-{entity.name}"
+        res = redis_client.hgetall(key)
+        if res is not None:
+            entity = Entity.objects.get(name=res["e"])
+            currency = Currency.objects.get(symbol=res["c"])
+            return AbstractBalance(
+                d=Decimal(res["p"]),
+                c=currency,
+                timestamp_utc_ns=int(res["t"]),
+                source=res["s"],
+                entity=entity,
+            )
+        return None
 
 
 class Price:
