@@ -1,19 +1,20 @@
 from abc import ABCMeta, abstractmethod
-from comon.http_helpers import AbstractResponse
-import time
-from base.utils import TickPrice
-from decimal import Decimal
-from datetime import datetime, timezone
-from common.models import Currency
 from accounting.models import Entity
-from trading.models import Trade, Exchange
-from typing import List
-import logging
+from trading.utils import TickPrice
 import ccxt
 from ccxt.base.errors import (
     RequestTimeout,
     NetworkError,
 )
+from common.http_helpers import AbstractResponse
+from common.models import Currency
+from datetime import datetime, timezone
+from decimal import Decimal
+import logging
+import time
+from trading.models import Trade, Exchange
+from typing import List
+
 
 LOGGER = logging.getLogger(__name__)
 
