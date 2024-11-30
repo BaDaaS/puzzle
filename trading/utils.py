@@ -1,8 +1,8 @@
-from datetime import datetime
-from typing import Optional
-from decimal import Decimal
-from common.models import Currency
 from accounts.models import Account, Entity
+from common.models import Currency
+from datetime import datetime
+from decimal import Decimal
+from typing import Optional
 
 
 class FIATDeposit:
