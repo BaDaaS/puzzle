@@ -2,7 +2,7 @@
 
 DOCKER_IMAGE_VERSION=7.4
 # Check this match the value in .env
-REDIS_PORT=6379
+REDIS_PORT=${REDIS_PORT:-6379}
 
 docker run \
        --name redis \
