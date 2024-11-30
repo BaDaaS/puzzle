@@ -1,7 +1,10 @@
 from django.db import models
-from common.constants import *
-from decimal import Decimal
-from datetime import datetime
+from common.constants import (
+    LENGTH_CURRENCY_SYMBOL,
+    LENGTH_CURRENCY_SYMBOL_UTF8,
+    LENGTH_CURRENCY_NAME,
+    LENGTH_CURRENCY_DECIMALS_DEFAULT,
+)
 
 
 # Create your models here.
