@@ -37,23 +37,12 @@ class Quantity:
 
 
 def str_amount_based_on_currency(amount: Decimal, currency: Currency) -> str:
-    if currency.decimals == 2:
-        return "{}{:,.2f}".format(currency.symbol, amount)
-    elif currency.decimals == 6:
-        return "{}{:,.6f}".format(currency.symbol, amount)
-    elif currency.decimals == 8:
-        return "{}{:,.8f}".format(currency.symbol, amount)
-    elif currency.decimals == 9:
-        return "{}{:,.9f}".format(currency.symbol, amount)
-    elif currency.decimals == 18:
-        return "{}{:,.18f}".format(currency.symbol, amount)
-    else:
-        print(
-            "FIXME: decimals not implemented for currency {}".format(
-                currency.symbol
-            )
-        )
-        return "{}{:,f}".format(currency.symbol, amount)
+    supported_decimals = {2, 6, 8, 9, 18}
+    if currency.decimals in supported_decimals:
+        return f"{currency.symbol}{amount:,.{currency.decimals}f}"
+    
+    print(f"FIXME: decimals not implemented for currency {currency.symbol}")
+    return f"{currency.symbol}{amount:,f}"
 
 
 class Volume:
