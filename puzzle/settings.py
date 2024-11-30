@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "trading",
+    "accounting",
     "common",
     "django.contrib.admin",
     "django.contrib.auth",
