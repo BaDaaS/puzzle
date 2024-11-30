@@ -1,5 +1,5 @@
 from base.exchange_api.base import AbstractAPI
-from base.utils import FIATDeposit
+from trading.utils import FIATDeposit
 import time
 from common.utils import AbstractBalance
 from datetime import datetime
