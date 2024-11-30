@@ -10,7 +10,17 @@ import logging
 DECOUPLE_CONFIG_FILE = config("DECOUPLE_ENVFILE", default=".env")
 config = Config(RepositoryEnv(DECOUPLE_CONFIG_FILE))
 
-logging.basicConfig(level=logging.INFO)
+LOGGING_LEVEL = config("LOGGING_LEVEL", default="INFO")
+if LOGGING_LEVEL == "DEBUG":
+    logging.basicConfig(level=logging.DEBUG)
+elif LOGGING_LEVEL == "INFO":
+    logging.basicConfig(level=logging.INFO)
+elif LOGGING_LEVEL == "WARNING":
+    logging.basicConfig(level=logging.WARNING)
+elif LOGGING_LEVEL == "ERROR":
+    logging.basicConfig(level=logging.ERROR)
+else:
+    raise ValueError(f"Unsupported logging level: {LOGGING_LEVEL}")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
