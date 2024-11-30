@@ -4,31 +4,67 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Entity',
+            name="Entity",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=256, unique=True)),
-                ('address_line_1', models.CharField(blank=True, max_length=256, null=True)),
-                ('address_line_2', models.CharField(blank=True, max_length=256, null=True)),
-                ('address_city', models.CharField(blank=True, max_length=128, null=True)),
-                ('address_country', models.CharField(blank=True, max_length=128, null=True)),
-                ('address_postal_code', models.CharField(blank=True, max_length=32, null=True)),
-                ('address_state', models.CharField(blank=True, max_length=128, null=True)),
-                ('vat_number', models.CharField(blank=True, max_length=32, null=True)),
-                ('website', models.CharField(blank=True, max_length=256, null=True)),
-                ('phone', models.CharField(blank=True, max_length=32, null=True)),
-                ('email', models.EmailField(blank=True, max_length=256, null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=256, unique=True)),
+                (
+                    "address_line_1",
+                    models.CharField(blank=True, max_length=256, null=True),
+                ),
+                (
+                    "address_line_2",
+                    models.CharField(blank=True, max_length=256, null=True),
+                ),
+                (
+                    "address_city",
+                    models.CharField(blank=True, max_length=128, null=True),
+                ),
+                (
+                    "address_country",
+                    models.CharField(blank=True, max_length=128, null=True),
+                ),
+                (
+                    "address_postal_code",
+                    models.CharField(blank=True, max_length=32, null=True),
+                ),
+                (
+                    "address_state",
+                    models.CharField(blank=True, max_length=128, null=True),
+                ),
+                (
+                    "vat_number",
+                    models.CharField(blank=True, max_length=32, null=True),
+                ),
+                (
+                    "website",
+                    models.CharField(blank=True, max_length=256, null=True),
+                ),
+                (
+                    "phone",
+                    models.CharField(blank=True, max_length=32, null=True),
+                ),
+                (
+                    "email",
+                    models.EmailField(blank=True, max_length=256, null=True),
+                ),
             ],
             options={
-                'verbose_name_plural': 'Entities',
+                "verbose_name_plural": "Entities",
             },
         ),
     ]
