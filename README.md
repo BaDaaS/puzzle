@@ -17,8 +17,8 @@ Features that Puzzle provides:
 The enterprise version is actively used by different successful companies in
 different areas:
 - BaDaaS - a cryptography laboratory based in Belgium
-- LeakIX - a cybersecurity company providing an overview of business vulnerable
-  assets on the Internet.
+- LeakIX - a cybersecurity company providing an overview of Internet facing
+  assets.
 
 ## Cypherpunk movement
 
