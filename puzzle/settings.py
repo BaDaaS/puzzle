@@ -189,8 +189,17 @@ REDIS_PORT = config("REDIS_PORT", cast=int)
 REDIS_USER = config("REDIS_USER", default=None)
 REDIS_PASSWORD = config("REDIS_PASSWORD", default=None)
 REDIS_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}"
+
+# InfluxDB settings
+INFLUXDB_HOST = config("INFLUXDB_HOST")
+INFLUXDB_PORT = config("INFLUXDB_PORT")
+INFLUXDB_URL = f"http://{INFLUXDB_HOST}:{INFLUXDB_PORT}"
+INFLUXDB_TOKEN = config("INFLUXDB_TOKEN")
+INFLUXDB_ORG = config("INFLUXDB_ORG")
+INFLUXDB_BUCKET = config("INFLUXDB_BUCKET")
 # ----------------- INFRASTRUCTURE -----------------
 
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
