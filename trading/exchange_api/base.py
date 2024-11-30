@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 from accounting.models import Entity
-from base.utils import TickPrice
+from trading.utils import TickPrice
 import ccxt
 from ccxt.base.errors import (
     RequestTimeout,
