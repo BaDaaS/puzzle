@@ -76,10 +76,7 @@ WSGI_APPLICATION = "puzzle.wsgi.application"
 DATABASE_ENGINE = config("DB_ENGINE")
 if DATABASE_ENGINE == "django.db.backends.sqlite3":
     DATABASES = {
-        "default": {
-            "ENGINE": config("DB_ENGINE"),
-            "NAME": BASE_DIR / config("DB_NAME")
-        }
+        "default": {"ENGINE": config("DB_ENGINE"), "NAME": BASE_DIR / config("DB_NAME")}
     }
 elif DATABASE_ENGINE == "django.db.backends.postgresql_psycopg2":
     DATABASES = {
