@@ -6,6 +6,15 @@ from influxdb_client import Point
 from typing import Optional
 
 
+def str_decimal_based_on_currency(amount: Decimal, currency: Currency) -> str:
+    supported_decimals = {2, 6, 8, 9, 18}
+    if currency.decimals in supported_decimals:
+        return f"{currency.symbol} {amount:,.{currency.decimals}f}"
+
+    print(f"FIXME: decimals not implemented for currency {currency.symbol}")
+    return f"{currency.symbol} {amount:,f}"
+
+
 class AbstractBalance(PublishableInfluxData):
     def __init__(
         self,
@@ -84,7 +93,7 @@ class Price:
         self.c = c
 
     def __str__(self):
-        return "{}{:,f}".format(self.c.symbol, self.d)
+        return str_decimal_based_on_currency(self.d, self.c)
 
     def __repr__(self):
         return self.__str__()
@@ -103,22 +112,13 @@ class Quantity:
         self.c = c
 
     def __str__(self):
-        return "{}{:,f}".format(self.c.symbol, self.d)
+        return str_decimal_based_on_currency(self.d, self.c)
 
     def __repr__(self):
         return self.__str__()
 
     def __format__(self, *args, **kwars):
         return self.__str__()
-
-
-def str_amount_based_on_currency(amount: Decimal, currency: Currency) -> str:
-    supported_decimals = {2, 6, 8, 9, 18}
-    if currency.decimals in supported_decimals:
-        return f"{currency.symbol}{amount:,.{currency.decimals}f}"
-
-    print(f"FIXME: decimals not implemented for currency {currency.symbol}")
-    return f"{currency.symbol}{amount:,f}"
 
 
 class Volume:
@@ -135,4 +135,4 @@ class Volume:
         self.currency = price.c
 
     def __str__(self):
-        return str_amount_based_on_currency(self.value, self.currency)
+        return str_decimal_based_on_currency(self.value, self.currency)
