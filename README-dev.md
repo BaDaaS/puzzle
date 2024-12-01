@@ -23,6 +23,7 @@ You will need Redis and InfluxDB to keep data.
 
 To start containers using docker, you can use:
 ```shell
+./infrastructure/grafana.sh
 ./infrastructure/influxdb.sh
 ./infrastructure/redis.sh
 ```
