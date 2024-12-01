@@ -116,7 +116,7 @@ def str_amount_based_on_currency(amount: Decimal, currency: Currency) -> str:
     supported_decimals = {2, 6, 8, 9, 18}
     if currency.decimals in supported_decimals:
         return f"{currency.symbol}{amount:,.{currency.decimals}f}"
-    
+
     print(f"FIXME: decimals not implemented for currency {currency.symbol}")
     return f"{currency.symbol}{amount:,f}"
 
