@@ -169,8 +169,8 @@ class API(AbstractAPI):
                 return trades
             for trade in raw_trades:
                 trade_id = trade["id"]
-                # If we reached this condition, we know we have reached the last trade, and the last trade has been
-                # executed.
+                # If we reached this condition, we know we have reached
+                # the last trade, and the last trade has been executed.
                 # We also suppose that two trades can't happen at the exact same time
                 if len(raw_trades) == 1 and trade_id == last_trade_id:
                     LOGGER.info(f"Reached last trade {trade_id}, stopping")
@@ -185,7 +185,8 @@ class API(AbstractAPI):
                     LOGGER.info(
                         f"Trade {trade_id} is out of the date range ({executed_date}), skipping"
                     )
-                # Even if the trade is out of the range, we still update the last trade date if it's more recent, it is
+                # Even if the trade is out of the range, we still update the
+                # last trade date if it's more recent, it is
                 # a way to stop the pagination
                 if last_trade_date is None or executed_date > last_trade_date:
                     LOGGER.info(
