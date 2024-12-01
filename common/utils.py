@@ -4,6 +4,20 @@ from common.models import Currency
 from decimal import Decimal
 from influxdb_client import Point
 from typing import Optional
+from django.db.migrations.executor import MigrationExecutor
+from django.db import connections
+
+
+def is_database_synchronized(database) -> bool:
+    """
+    Check if there is any pending migration for the database
+    """
+    connection = connections[database]
+    connection.prepare_database()
+    executor = MigrationExecutor(connection)
+    targets = executor.loader.graph.leaf_nodes()
+    is_synced = len(executor.migration_plan(targets)) == 0
+    return is_synced
 
 
 def str_decimal_based_on_currency(amount: Decimal, currency: Currency) -> str:
