@@ -59,6 +59,8 @@ class API(AbstractAPI):
         # Kraken specifics
         "ETH2.S": CacheCurrency.get(symbol="ETH.S"),
         "MINA.S": CacheCurrency.get(symbol="MINA.S"),
+        # Seems to be spot
+        "MINA.F": CacheCurrency.get(symbol="MINA"),
         "SOL.S": CacheCurrency.get(symbol="SOL.S"),
         "EUR.M": CacheCurrency.get(symbol="EUR"),
         "DOT.S": CacheCurrency.get(symbol="DOT.S"),
