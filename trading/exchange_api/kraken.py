@@ -216,7 +216,7 @@ class API(AbstractAPI):
             time.sleep(1)
             return self.get_balance()
         except Exception as e:
-            LOGGER.error("Exception not handled: {e}. Stopping")
+            LOGGER.error(f"Exception not handled: {e}. Stopping")
             raise e
         result_info = result["info"]
         if result_info["error"] != []:
