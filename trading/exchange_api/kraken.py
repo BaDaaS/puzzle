@@ -264,4 +264,10 @@ class API(AbstractAPI):
         entity: Entity,
         currency: Currency,
     ) -> List[FIATDeposit]:
-        raise ValueError("Unimplemented")
+        since = from_datetime.timestamp() * 1_000_000_000
+        end_time = until_datetime.timestamp() * 1_000_000_000
+        currency_symbol = currency.symbol
+        deposits = self.api.fetchDeposits(
+            code=currency_symbol, since=since, params={"endTime": end_time}
+        )
+        return deposits
