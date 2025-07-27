@@ -1,30 +1,296 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * PUZZLE - Cypherpunk Glitch Theme
+ * Cryptography. Resistance. Interoperability.
  */
 
-/* You can override the default Infima variables here. */
+/* Import monospace fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
+
+/* Cypherpunk Color Variables */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Typography - Monospace everything */
+  --ifm-font-family-base: 'Fira Code', 'IBM Plex Mono', 'Courier New', monospace;
+  --ifm-font-family-monospace: 'Fira Code', 'IBM Plex Mono', 'Courier New', monospace;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Cypherpunk Color Palette */
+  --puzzle-bg-primary: #0d0d0d;
+  --puzzle-hacker-green: #00ff88;
+  --puzzle-glitch-red: #ff0033;
+  --puzzle-electric-cyan: #00cfff;
+  --puzzle-violet-glitch: #9e00ff;
+  --puzzle-text-primary: #e6e6e6;
+  --puzzle-text-muted: #999999;
+  
+  /* Apply colors to Docusaurus variables */
+  --ifm-color-primary: var(--puzzle-hacker-green);
+  --ifm-color-primary-dark: #00e67a;
+  --ifm-color-primary-darker: #00d973;
+  --ifm-color-primary-darkest: #00b35f;
+  --ifm-color-primary-light: #1aff95;
+  --ifm-color-primary-lighter: #33ffa2;
+  --ifm-color-primary-lightest: #66ffbb;
+  
+  --ifm-background-color: var(--puzzle-bg-primary);
+  --ifm-background-surface-color: #151515;
+  --ifm-navbar-background-color: var(--puzzle-bg-primary);
+  --ifm-footer-background-color: var(--puzzle-bg-primary);
+  
+  --ifm-font-color-base: var(--puzzle-text-primary);
+  --ifm-font-color-secondary: var(--puzzle-text-muted);
+  --ifm-heading-color: var(--puzzle-text-primary);
+  
+  /* Accent colors */
+  --ifm-color-success: var(--puzzle-hacker-green);
+  --ifm-color-info: var(--puzzle-electric-cyan);
+  --ifm-color-warning: #ffaa00;
+  --ifm-color-danger: var(--puzzle-glitch-red);
+  
+  /* Code blocks */
+  --ifm-code-background: #1a1a1a;
+  --ifm-code-color: var(--puzzle-hacker-green);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 255, 136, 0.1);
+  
+  /* Borders and effects */
+  --ifm-global-border-width: 1px;
+  --ifm-global-radius: 2px;
+  --ifm-toc-border-color: #333333;
+  --ifm-contents-border-color: #333333;
+  --ifm-color-emphasis-300: #333333;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark theme enforces cypherpunk aesthetic */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  /* Use same variables as light theme - we want consistent dark look */
+  --ifm-color-primary: var(--puzzle-hacker-green);
+  --ifm-color-primary-dark: #00e67a;
+  --ifm-color-primary-darker: #00d973;
+  --ifm-color-primary-darkest: #00b35f;
+  --ifm-color-primary-light: #1aff95;
+  --ifm-color-primary-lighter: #33ffa2;
+  --ifm-color-primary-lightest: #66ffbb;
+  
+  --ifm-background-color: var(--puzzle-bg-primary);
+  --ifm-background-surface-color: #151515;
+  --ifm-navbar-background-color: var(--puzzle-bg-primary);
+  --ifm-footer-background-color: var(--puzzle-bg-primary);
+  
+  --ifm-font-color-base: var(--puzzle-text-primary);
+  --ifm-font-color-secondary: var(--puzzle-text-muted);
+  --ifm-heading-color: var(--puzzle-text-primary);
+  
+  --ifm-color-success: var(--puzzle-hacker-green);
+  --ifm-color-info: var(--puzzle-electric-cyan);
+  --ifm-color-warning: #ffaa00;
+  --ifm-color-danger: var(--puzzle-glitch-red);
+  
+  --ifm-code-background: #1a1a1a;
+  --ifm-code-color: var(--puzzle-hacker-green);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 255, 136, 0.1);
+}
+
+/* === CYPHERPUNK GLITCH EFFECTS === */
+
+/* Glitch text animation */
+@keyframes glitch {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-2px) skewX(-1deg); }
+  20% { transform: translateX(2px) skewX(1deg); }
+  30% { transform: translateX(-1px) skewX(-0.5deg); }
+  40% { transform: translateX(1px) skewX(0.5deg); }
+  50% { transform: translateX(-0.5px) skewX(-0.2deg); }
+  60% { transform: translateX(0.5px) skewX(0.2deg); }
+}
+
+@keyframes glitch-color {
+  0%, 100% { color: var(--puzzle-text-primary); text-shadow: none; }
+  25% { 
+    color: var(--puzzle-glitch-red); 
+    text-shadow: 2px 0 var(--puzzle-electric-cyan), -2px 0 var(--puzzle-violet-glitch);
+  }
+  50% { 
+    color: var(--puzzle-electric-cyan); 
+    text-shadow: -2px 0 var(--puzzle-glitch-red), 2px 0 var(--puzzle-hacker-green);
+  }
+  75% { 
+    color: var(--puzzle-violet-glitch); 
+    text-shadow: 2px 0 var(--puzzle-hacker-green), -2px 0 var(--puzzle-glitch-red);
+  }
+}
+
+/* Apply glitch to headings on hover */
+.glitch-text {
+  animation: glitch 0.3s ease-in-out, glitch-color 0.8s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+
+.glitch-text:hover {
+  animation-play-state: running;
+}
+
+/* Terminal-inspired styling */
+html {
+  background: var(--puzzle-bg-primary);
+}
+
+body {
+  font-family: var(--ifm-font-family-base);
+  background: var(--puzzle-bg-primary);
+  color: var(--puzzle-text-primary);
+}
+
+/* Navbar styling */
+.navbar {
+  border-bottom: 1px solid #333;
+  box-shadow: 0 2px 4px rgba(0, 255, 136, 0.1);
+}
+
+.navbar__brand:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+/* Button styling with glitch hover */
+.button {
+  font-family: var(--ifm-font-family-base);
+  font-weight: 500;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.button:hover {
+  background: var(--ifm-color-primary);
+  color: var(--puzzle-bg-primary);
+  box-shadow: 0 0 10px var(--ifm-color-primary);
+  transform: translateY(-1px);
+}
+
+.button--secondary {
+  background: var(--ifm-color-primary);
+  color: var(--puzzle-bg-primary);
+}
+
+.button--secondary:hover {
+  background: transparent;
+  color: var(--ifm-color-primary);
+}
+
+/* CRT/Scanline effects */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    transparent 50%,
+    rgba(0, 255, 136, 0.03) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  animation: scanlines 0.1s linear infinite;
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* Hero section */
+.hero {
+  background: var(--puzzle-bg-primary);
+  border-bottom: 1px solid #333;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Footer styling */
+.footer {
+  background: var(--puzzle-bg-primary);
+  border-top: 1px solid #333;
+}
+
+.footer__links {
+  color: var(--puzzle-text-muted);
+}
+
+/* Code blocks - terminal style */
+.prism-code {
+  background: #0a0a0a !important;
+  border: 1px solid #333;
+}
+
+code {
+  background: var(--ifm-code-background);
+  color: var(--puzzle-hacker-green);
+  border: 1px solid #333;
+}
+
+/* Headings with glitch effect */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-font-family-base);
+  color: var(--puzzle-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Make all section headers glitchy */
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  position: relative;
+}
+
+.markdown h1::after,
+.markdown h2::after,
+.markdown h3::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: var(--puzzle-glitch-red);
+  animation: glitch-overlay 0.1s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.markdown h1:hover::after,
+.markdown h2:hover::after,
+.markdown h3:hover::after {
+  animation-play-state: running;
+}
+
+@keyframes glitch-overlay {
+  0%, 100% { transform: translateX(0); opacity: 0; }
+  50% { transform: translateX(2px); opacity: 0.8; }
+}
+
+/* Links */
+a {
+  color: var(--puzzle-electric-cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--puzzle-hacker-green);
+  text-shadow: 0 0 5px var(--puzzle-hacker-green);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+  
+  .hero::before {
+    display: none; /* Disable scanlines on mobile for performance */
+  }
 }

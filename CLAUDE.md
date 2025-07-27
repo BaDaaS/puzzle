@@ -208,3 +208,148 @@ The project uses Dependabot for automated dependency updates:
 Dependabot will create pull requests with dependency updates that need to be
 reviewed and merged. The CI pipeline will automatically test all dependency
 updates.
+
+## Design System & Brand Guidelines
+
+### Cypherpunk Visual Identity
+
+Puzzle follows a **cypherpunk aesthetic** that emphasizes cryptographic
+resistance, decentralization, and hacker culture. This design system should be
+applied consistently across all interfaces, documentation, and user touchpoints.
+
+#### Color Palette
+
+**Primary Colors:**
+- `#0d0d0d` - Deep black background (puzzle-bg-primary)
+- `#00ff88` - Hacker green primary (puzzle-hacker-green)
+- `#ff0033` - Glitch red secondary (puzzle-glitch-red)
+- `#00cfff` - Electric cyan tertiary (puzzle-electric-cyan)
+- `#9e00ff` - Violet glitch highlight (puzzle-violet-glitch)
+
+**Text Colors:**
+- `#e6e6e6` - Primary text (puzzle-text-primary)
+- `#999999` - Muted/secondary text (puzzle-text-muted)
+
+**Usage Guidelines:**
+- Use deep black (#0d0d0d) as primary background in all interfaces
+- Hacker green (#00ff88) for primary actions, success states, and interactive
+  elements
+- Glitch red (#ff0033) for errors, warnings, and attention-grabbing elements
+- Electric cyan (#00cfff) for informational elements and secondary actions
+- Violet glitch (#9e00ff) for special highlights and premium features
+
+#### Typography
+
+**Primary Font Stack:**
+```css
+font-family: 'Fira Code', 'IBM Plex Mono', 'Courier New', monospace;
+```
+
+**Characteristics:**
+- **Monospace only** - All text uses monospace fonts for terminal authenticity
+- **Letter spacing** - Increased letter spacing (1-4px) for headers
+- **Text transform** - UPPERCASE for headings and important elements
+- **Font weights** - 300, 400, 500, 600, 700 available
+
+#### Visual Effects
+
+**Glitch Animations:**
+- Hover effects on headings with color-shifting and position glitching
+- Color cycling through red, cyan, violet, and green
+- Subtle transform skewing and translation
+
+**CRT/Terminal Effects:**
+- Scanline overlays on hero sections (subtle green lines)
+- Box shadows with neon glow effects
+- Border styling with terminal-inspired sharp edges (2px border-radius max)
+
+**Interactive Elements:**
+- Buttons with glowing hover states
+- Transform animations (translateY, scale)
+- Neon glow shadows using primary colors
+
+#### Layout Principles
+
+**Terminal-Inspired Structure:**
+- High contrast black backgrounds
+- Minimal UI chrome and unnecessary decorations
+- Sharp, geometric layouts with clean borders
+- Monospace text creates natural grid alignment
+
+**Spacing System:**
+- Use rem units for consistent scaling
+- Base spacing: 0.5rem, 1rem, 1.5rem, 2rem, 3rem, 4rem
+- Generous padding for readability on dark backgrounds
+
+**Interactive Feedback:**
+- Immediate visual feedback on all interactions
+- Hover states with color and glow changes
+- Animation duration: 0.2s-0.3s for responsiveness
+
+#### Implementation Standards
+
+**CSS Variables:**
+Always use the defined CSS custom properties for colors:
+```css
+var(--puzzle-bg-primary)
+var(--puzzle-hacker-green)
+var(--puzzle-glitch-red)
+var(--puzzle-electric-cyan)
+var(--puzzle-violet-glitch)
+var(--puzzle-text-primary)
+var(--puzzle-text-muted)
+```
+
+**Accessibility:**
+- Maintain high contrast ratios (minimum 4.5:1)
+- Ensure all interactive elements are keyboard accessible
+- Provide focus indicators with neon glow effects
+- Test with screen readers
+
+**Performance:**
+- Use CSS animations over JavaScript when possible
+- Disable complex effects on mobile devices
+- Optimize font loading with display: swap
+
+#### Brand Voice & Messaging
+
+**Tone:**
+- **Technical** - Use precise, cryptographic terminology
+- **Rebellious** - Challenge traditional financial systems
+- **Empowering** - Focus on user sovereignty and control
+- **Minimalist** - Clear, direct communication without fluff
+
+**Key Phrases:**
+- "Cryptography. Resistance. Interoperability."
+- "Take back control of your financial sovereignty"
+- "Cypherpunk-first asset management"
+- "Decentralized. Encrypted. Unstoppable."
+
+**UI Copy Style:**
+- ALL CAPS for primary actions and headings
+- Terminal-style prompts: `$ sudo ./puzzle --command`
+- Hacker-inspired button labels: "DECRYPT", "EXECUTE", "INITIALIZE"
+- Technical precision in error messages and status updates
+
+#### Application Across Interfaces
+
+**Web Interface:**
+- Dark theme enforced (no light mode)
+- Full-screen hero sections with terminal prompts
+- Monospace fonts throughout the entire application
+- Glitch effects on hover for all interactive elements
+
+**Documentation:**
+- Code-heavy examples with syntax highlighting
+- Terminal command examples prominently featured
+- Dark theme in all documentation platforms
+- Consistent color scheme across all pages
+
+**Marketing Materials:**
+- High contrast visuals emphasizing the logo's red puzzle pieces
+- Technical diagrams with neon-style highlighting
+- Screenshots showing terminal interfaces and dark themes
+
+This design system ensures Puzzle maintains a consistent, authentic cypherpunk
+identity that resonates with its target audience of privacy-conscious users,
+developers, and financial sovereignty advocates.

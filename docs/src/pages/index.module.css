@@ -1,24 +1,144 @@
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * PUZZLE Cypherpunk Homepage Styles
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 6rem 0 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: var(--puzzle-bg-primary);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.logoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.heroLogo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 51, 0.5));
+  transition: filter 0.3s ease;
+}
+
+.heroLogo:hover {
+  filter: drop-shadow(0 0 20px rgba(255, 0, 51, 0.8));
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--puzzle-text-primary);
+  margin: 0;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.heroSlogan {
+  font-size: 1.2rem;
+  color: var(--puzzle-text-muted);
+  margin: 2rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.terminalPrompt {
+  margin-top: 3rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 1.1rem;
+  color: var(--puzzle-hacker-green);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem 2rem;
+  border: 1px solid #333;
+  border-radius: 2px;
+  display: inline-block;
+  text-align: left;
+}
+
+.promptSymbol {
+  color: var(--puzzle-glitch-red);
+  margin-right: 0.5rem;
+}
+
+.promptText {
+  color: var(--puzzle-text-primary);
+}
+
+.cursor {
+  color: var(--puzzle-hacker-green);
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3rem 1rem;
+    min-height: 60vh;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .heroLogo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .heroSlogan {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .terminalPrompt {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroSlogan {
+    font-size: 0.9rem;
+  }
+  
+  .terminalPrompt {
+    font-size: 0.8rem;
+  }
 }

@@ -72,8 +72,13 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
-      title: 'Puzzle',
+      title: 'PUZZLE',
       logo: {
         alt: 'Puzzle Logo',
         src: 'img/logo.png',
