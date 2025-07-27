@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield outline -->
+  <path d="M50 10 L20 25 L20 50 C20 70 35 85 50 90 C65 85 80 70 80 50 L80 25 Z" 
+        fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Lock body -->
+  <rect x="40" y="35" width="20" height="25" rx="2" 
+        fill="none" stroke="currentColor" stroke-width="2"/>
+  <!-- Lock ring -->
+  <circle cx="50" cy="42" r="4" 
+          fill="none" stroke="currentColor" stroke-width="2"/>
+  <!-- Keyhole -->
+  <circle cx="50" cy="48" r="1.5" fill="currentColor"/>
+  <rect x="49" y="49" width="2" height="4" fill="currentColor"/>
+</svg>

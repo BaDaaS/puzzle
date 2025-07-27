@@ -12,7 +12,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Privacy-First',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/privacy-first.svg').default,
     description: (
       <>
         Self-hosted asset management that keeps your financial data under your
@@ -22,7 +22,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Real-Time Tracking',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/real-time-tracking.svg').default,
     description: (
       <>
         Monitor crypto, stocks, real estate, T-bills, and cash in one unified
@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Enterprise Ready',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/enterprise-ready.svg').default,
     description: (
       <>
         Built on Django with PostgreSQL, InfluxDB, and Redis. Includes
