@@ -21,42 +21,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+    - name: Setup Python and Poetry
+      uses: ./.github/actions/setup-python
       with:
         python-version: ${{ matrix.python-version }}
-
-    - name: Install poetry
-      uses: abatilo/actions-poetry@v4
-      with:
         poetry-version: ${{ matrix.poetry-version }}
 
-    - name: Install hadolint
-      run: |
-        sudo wget -O /usr/local/bin/hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
-        sudo chmod +x /usr/local/bin/hadolint
-      shell: bash
-
-    - name: Install shellcheck
-      run: |
-        sudo apt-get update && sudo apt-get install -y shellcheck
-      shell: bash
-
-    - name: Setup Node.js for prettier
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-
-    - uses: actions/cache@v4
-      name: Define a cache for the virtual environment based on the dependencies lock file
-      with:
-        path: ./.venv
-        key: venv-${{ hashFiles('poetry.lock') }}
-
-    - name: Install Dependencies
-      run: |
-        export PATH="$HOME/.local/bin:$PATH"
-        poetry install
+    - name: Setup Development Tools
+      uses: ./.github/actions/setup-tools
 
     - name: Run linting checks
       run: |

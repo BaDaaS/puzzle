@@ -11,32 +11,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Privacy-First',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Self-hosted asset management that keeps your financial data under your
+        complete control. No centralized platforms, no privacy concerns.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Real-Time Tracking',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Monitor crypto, stocks, real estate, T-bills, and cash in one unified
+        interface with live updates and comprehensive analytics.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Enterprise Ready',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Built on Django with PostgreSQL, InfluxDB, and Redis. Includes
+        double-entry accounting, exchange integrations, and automated invoicing.
       </>
     ),
   },

@@ -21,7 +21,12 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Get Started 🚀
+          </Link>
+          <Link
+            className="button button--outline button--secondary button--lg"
+            to="/docs/getting-started/installation">
+            Installation Guide 📖
           </Link>
         </div>
       </div>
@@ -33,8 +38,10 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title} - Privacy-First Asset Management`}
+      description="Take control back of your assets in real-time. Crypto, stocks, 
+        real estates, T-bills, cash. Self-hosted, privacy-first asset 
+        management platform for businesses and sole traders.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
