@@ -74,7 +74,6 @@ Puzzle currently supports the following exchanges:
 
 1. **Create API Keys**: Log into your exchange and create API keys with
    appropriate permissions:
-
    - **Read permissions**: For balance and trade history
    - **Trade permissions**: Only if you plan to execute trades through Puzzle
 

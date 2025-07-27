@@ -1,0 +1,13 @@
+{
+  "name": "puzzle",
+  "version": "1.0.0",
+  "description": "Cypherpunk-first asset management platform",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "scripts": {
+    "format": "prettier --write \"**/*.md\"",
+    "check": "prettier --check \"**/*.md\""
+  }
+}
