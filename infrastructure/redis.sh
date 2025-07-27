@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_IMAGE_VERSION=7.4
+DOCKER_IMAGE_VERSION=8.0
 # Check this match the value in .env
 REDIS_PORT=${REDIS_PORT:-6379}
 

@@ -1,13 +1,15 @@
 # Puzzle - Take control back of your assets in real-time. Crypto, stocks, real estates, T-bills, cash.
 
-Managing assets of a business or as a sole-trader is cumbersome and requires to be meticulous.
-Even though some platforms like [Finary](https://finary.com/en) do exist, these
-platforms are centralized, and might not be respecting your privacy.
+Managing assets of a business or as a sole-trader is cumbersome and requires to
+be meticulous. Even though some platforms like [Finary](https://finary.com/en)
+do exist, these platforms are centralized, and might not be respecting your
+privacy.
 
 Puzzle is the software to manage all of your assets, in one-app, in real-time,
 including your invoices and clients.
 
 Features that Puzzle provides:
+
 - (real-time and automated) invoicing system
 - integration with Stripe
 - financial market interface, crypto and FIAT
@@ -16,6 +18,7 @@ Features that Puzzle provides:
 
 The enterprise version is actively used by different successful companies in
 different areas:
+
 - BaDaaS - a cryptography laboratory based in Belgium
 - LeakIX - a cybersecurity company providing an overview of Internet facing
   assets.
@@ -26,16 +29,18 @@ At [BaDaaS](https://badaas.be), we do believe the cypherpunks must build free
 and open source softwares that help people to keep their privacy.
 
 Manifesto's:
+
 - [PrivAcc - 2024](https://privacc.org/)
 
 ## Enterprise
 
-If you want to reach out to us for an enterprise version or enterprise
-features, send us an email at contact@badaas.be.
+If you want to reach out to us for an enterprise version or enterprise features,
+send us an email at contact@badaas.be.
 
 ## Technological stack
 
 The software is built on different components:
+
 - a relational database, PostgreSQL, to keep track of relational data, like the
   ledgers, the trades, etc. It aims to be long term data. Not necessarily
   time-based.
@@ -43,8 +48,7 @@ The software is built on different components:
   data evolving every seconds, at least. It might be stricter on time later.
 - a middleware, Redis, to communicate in real time between processes and
   exchange information.
-- a web interface, to visualize and interact with the
-  PostgreSQL database.
+- a web interface, to visualize and interact with the PostgreSQL database.
 
 ## Where does the development of the software happen?
 
@@ -64,5 +68,5 @@ GPL 3.0
 
 ## Why Puzzle?
 
-That's the puzzle!
-Reference: [How I met your mother](https://how-i-met-your-mother.fandom.com/wiki/Puzzles)
+That's the puzzle! Reference:
+[How I met your mother](https://how-i-met-your-mother.fandom.com/wiki/Puzzles)

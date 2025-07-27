@@ -1,48 +1,21 @@
-name: Django CI
+name: Build
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Lint and Format", "Test"]
+    types:
+      - completed
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.13"]
-        poetry-version: ["latest"]
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'pull_request' }}
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install poetry
-      uses: abatilo/actions-poetry@v3
-      with:
-        poetry-version: ${{ matrix.poetry-version }}
-    - uses: actions/cache@v3
-      name: Define a cache for the virtual environment based on the dependencies lock file
-      with:
-        path: ./.venv
-        key: venv-${{ hashFiles('poetry.lock') }}
-    - name: Install Dependencies
-      run: |
-        poetry install
-    - name: Check linter and formatter
-      run: |
-        poetry run ruff check
-        poetry run ruff format
-    - name: Use SQLite3 db backend for tests
-      run: |
-        cp example.env .env
-    - name: Run Django migrations
-      run: |
-        poetry run python manage.py migrate
-    - name: Run Tests
-      run: |
-        poetry run python manage.py test
+
+    - name: Build Docker Image
+      run: make docker-build

@@ -1,0 +1,60 @@
+name: Test
+
+on:
+  workflow_run:
+    workflows: ["Lint and Format"]
+    types:
+      - completed
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'pull_request' }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-22.04, ubuntu-24.04, macos-latest]
+        python-version: ["3.13"]
+        poetry-version: ["latest"]
+        include:
+          - os: ubuntu-latest
+            arch: arm64
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install poetry
+      uses: abatilo/actions-poetry@v3
+      with:
+        poetry-version: ${{ matrix.poetry-version }}
+
+    - uses: actions/cache@v3
+      name: Define a cache for the virtual environment based on the dependencies lock file
+      with:
+        path: ./.venv
+        key: venv-${{ hashFiles('poetry.lock') }}
+
+    - name: Install Dependencies
+      run: |
+        export PATH="$HOME/.local/bin:$PATH"
+        poetry install
+
+    - name: Setup Environment
+      run: cp example.env .env
+
+    - name: Run Migrations
+      run: |
+        export PATH="$HOME/.local/bin:$PATH"
+        make migrate
+
+    - name: Run Tests
+      run: |
+        export PATH="$HOME/.local/bin:$PATH"
+        make test
