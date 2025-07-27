@@ -70,8 +70,20 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Puzzle social card for sharing
+    // Replace this with your project's social card.
     image: 'img/puzzle-social-card.png',
+    // Open Graph metadata for social media sharing
+    metadata: [
+      {name: 'description', content: 'Self-hosted asset management without third parties. Puzzle empowers users to manage financial assets and data without relying on centralized third-party services.'},
+      {property: 'og:title', content: 'PUZZLE - Self-hosted Asset Management'},
+      {property: 'og:description', content: 'Manage your financial assets and data without relying on third parties. Take control of your asset management with self-hosted solutions.'},
+      {property: 'og:type', content: 'website'},
+      {property: 'og:image', content: 'https://badaas.github.io/puzzle/img/puzzle-social-card.png'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'twitter:title', content: 'PUZZLE - Self-hosted Asset Management'},
+      {name: 'twitter:description', content: 'Manage your financial assets and data without relying on third parties. Take control of your asset management with self-hosted solutions.'},
+      {name: 'twitter:image', content: 'https://badaas.github.io/puzzle/img/puzzle-social-card.png'},
+    ],
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
