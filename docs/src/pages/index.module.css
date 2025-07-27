@@ -91,9 +91,71 @@
   animation: blink 1s ease-in-out infinite;
 }
 
+.animatedCommand {
+  display: inline-block;
+  min-width: 200px;
+  animation: typeCommands 8s ease-in-out infinite;
+}
+
+.animatedCommand::after {
+  content: "";
+  animation: typeText 8s ease-in-out infinite;
+}
+
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
+}
+
+@keyframes typeCommands {
+  0% { width: 0; }
+  20% { width: 150px; }
+  40% { width: 150px; }
+  50% { width: 0; }
+  70% { width: 200px; }
+  90% { width: 200px; }
+  100% { width: 0; }
+}
+
+@keyframes typeText {
+  0% { content: ""; }
+  5% { content: "--"; }
+  10% { content: "--s"; }
+  15% { content: "--sy"; }
+  20% { content: "--syn"; }
+  25% { content: "--sync"; }
+  30% { content: "--sync-"; }
+  35% { content: "--sync-a"; }
+  40% { content: "--sync-as"; }
+  45% { content: "--sync-ass"; }
+  47% { content: "--sync-asse"; }
+  49% { content: "--sync-asset"; }
+  50% { content: "--sync-assets"; }
+  
+  55% { content: "--sync-asset"; }
+  57% { content: "--sync-asse"; }
+  59% { content: "--sync-ass"; }
+  61% { content: "--sync-as"; }
+  63% { content: "--sync-a"; }
+  65% { content: "--sync-"; }
+  67% { content: "--sync"; }
+  69% { content: "--syn"; }
+  71% { content: "--sy"; }
+  73% { content: "--s"; }
+  75% { content: "--se"; }
+  77% { content: "--sec"; }
+  79% { content: "--secu"; }
+  81% { content: "--secur"; }
+  83% { content: "--secure"; }
+  85% { content: "--secure-"; }
+  87% { content: "--secure-p"; }
+  89% { content: "--secure-po"; }
+  91% { content: "--secure-por"; }
+  93% { content: "--secure-port"; }
+  95% { content: "--secure-portf"; }
+  97% { content: "--secure-portfo"; }
+  99% { content: "--secure-portfol"; }
+  100% { content: "--secure-portfolio"; }
 }
 
 /* Mobile responsive */
@@ -127,6 +189,10 @@
     font-size: 0.9rem;
     padding: 0.8rem 1rem;
   }
+  
+  .animatedCommand {
+    min-width: 180px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -140,5 +206,9 @@
   
   .terminalPrompt {
     font-size: 0.8rem;
+  }
+  
+  .animatedCommand {
+    min-width: 140px;
   }
 }

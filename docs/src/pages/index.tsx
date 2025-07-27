@@ -24,7 +24,7 @@ function PuzzleHero() {
         </div>
         
         <p className={styles.heroSlogan}>
-          CRYPTOGRAPHY. RESISTANCE. INTEROPERABILITY.
+          SELF-HOSTED ASSET MANAGEMENT WITHOUT THIRD PARTIES
         </p>
         
         <div className={styles.buttons}>
@@ -43,7 +43,7 @@ function PuzzleHero() {
         <div className={styles.terminalPrompt}>
           <span className={styles.promptSymbol}>$</span>
           <span className={styles.promptText}>
-            sudo ./puzzle --decrypt-the-future
+            sudo ./puzzle <span className={styles.animatedCommand}></span>
           </span>
           <span className={styles.cursor}>_</span>
         </div>
@@ -56,9 +56,9 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title="PUZZLE - Cryptography. Resistance. Interoperability."
-      description="Cypherpunk-first asset management. Decentralized. Encrypted. 
-        Unstoppable. Take back control of your financial sovereignty.">
+      title="PUZZLE - Self-Hosted Asset Management"
+      description="Manage your assets without relying on third parties to host 
+        your data and frontend. Complete control over your financial data.">
       <PuzzleHero />
       <main>
         <HomepageFeatures />
