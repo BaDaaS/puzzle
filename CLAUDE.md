@@ -372,3 +372,126 @@ var(--puzzle-text-muted)
 This design system ensures Puzzle maintains a consistent, authentic cypherpunk
 identity that resonates with its target audience of privacy-conscious users,
 developers, and financial sovereignty advocates.
+
+## Website Theme Consistency Guidelines
+
+### Homepage Design Standards
+
+The entire Puzzle website should maintain visual and functional consistency with
+the main page design. All pages must follow these established patterns:
+
+#### Visual Identity Consistency
+
+**Homepage Layout Elements to Replicate:**
+
+- **Hero Section Structure**: Large logo placement with animated terminal prompt
+- **Monospace Typography**: Fira Code font family throughout all pages
+- **Color Scheme**: Dark background (#0d0d0d) with hacker green (#00ff88) accents
+- **Button Styling**: Uppercase text, glowing hover effects, terminal-inspired design
+- **Grid Layouts**: Clean, geometric arrangements with proper spacing
+- **Terminal Aesthetics**: Command prompts, scanline effects, and cursor animations
+
+#### Animation Standards
+
+**Terminal-Style Interactions:**
+
+- **Animated Commands**: Use typing/erasing effects for dynamic content
+- **Glitch Effects**: Apply to headings and interactive elements on hover
+- **Cursor Animations**: Blinking cursors for terminal authenticity
+- **Scanline Overlays**: Subtle CRT effects on hero sections (dark theme only)
+
+**Animation Specifications:**
+
+```css
+/* Standard glitch hover effect for all pages */
+.glitch-text:hover {
+  animation: glitch-flicker 0.3s infinite;
+}
+
+/* Terminal command animation timing */
+.animated-command {
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+```
+
+#### Page-Specific Implementation
+
+**Documentation Pages:**
+
+- Maintain dark theme with terminal command examples
+- Use monospace fonts for all body text
+- Apply glitch effects to section headings
+- Include terminal prompts for code examples
+- Consistent button styling across all CTAs
+
+**Blog Pages:**
+
+- Same color scheme and typography as homepage
+- Terminal-style metadata display (dates, authors, tags)
+- Animated elements for featured posts
+- Consistent navigation and footer styling
+
+**Configuration/Setup Pages:**
+
+- Terminal-style forms and input fields
+- Animated feedback for user actions
+- Command-line aesthetic for settings
+- Consistent error and success states
+
+#### Technical Requirements
+
+**CSS Architecture:**
+
+- Use CSS custom properties defined in homepage
+- Maintain consistent spacing system (0.5rem, 1rem, 1.5rem, 2rem, 3rem, 4rem)
+- Apply same border-radius (2px max) and box-shadow patterns
+- Consistent transition timing (0.2s-0.3s for interactions)
+
+**Performance Standards:**
+
+- CSS-only animations (no JavaScript dependencies)
+- Mobile-responsive breakpoints matching homepage
+- Optimized font loading with display: swap
+- Minimal animation on mobile devices for performance
+
+**Accessibility Compliance:**
+
+- Maintain high contrast ratios from homepage design
+- Keyboard navigation consistency across all pages
+- Screen reader compatibility for all animations
+- Focus indicators with neon glow effects
+
+#### Content Guidelines
+
+**Messaging Consistency:**
+
+- Self-hosted asset management focus throughout
+- Terminal command examples for all technical content
+- Consistent tone: technical, empowering, privacy-focused
+- All buttons and CTAs use uppercase terminal-style text
+
+**Visual Content:**
+
+- Screenshots showing terminal interfaces
+- Code examples with syntax highlighting
+- Technical diagrams with neon accent colors
+- Consistent logo placement and sizing
+
+### Implementation Priority
+
+1. **High Priority**: Documentation pages, installation guides, configuration
+2. **Medium Priority**: Blog posts, about pages, contact forms
+3. **Low Priority**: Error pages, search results, archive pages
+
+**Quality Assurance:**
+
+- Every new page must match homepage terminal aesthetic
+- Regular design reviews to ensure consistency
+- Cross-browser testing for animation compatibility
+- Performance monitoring for animation impact
+
+This comprehensive approach ensures users experience a cohesive, professional
+terminal-inspired interface that reinforces Puzzle's identity as a
+self-hosted, privacy-first asset management solution.
