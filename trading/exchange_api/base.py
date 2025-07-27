@@ -24,9 +24,9 @@ class AbstractAPI(metaclass=ABCMeta):
     CURRENCY_MAPPING = {}
 
     def __init__(self, api_key: str, secret_key: str):
-        assert (
-            self.EXCHANGE_CCXT_NAME is not None
-        ), "EXCHANGE_CCXT_NAME must be set for the API"
+        assert self.EXCHANGE_CCXT_NAME is not None, (
+            "EXCHANGE_CCXT_NAME must be set for the API"
+        )
         assert api_key is not None, "API key must be set for the API"
         assert secret_key is not None, "Secret key must be set for the API"
         self.exchange = Exchange.objects.get(name=self.REGISTER_ID)

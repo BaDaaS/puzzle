@@ -87,9 +87,9 @@ class API(AbstractAPI):
         secret_key: str = settings.CRYPTO_EXCHANGE_KRAKEN_SECRET_KEY,
     ):
         for key, value in self.CURRENCY_MAPPING.items():
-            assert isinstance(
-                value, Currency
-            ), f"{key} is not a Currency object"
+            assert isinstance(value, Currency), (
+                f"{key} is not a Currency object"
+            )
 
         super(API, self).__init__(api_key=api_key, secret_key=secret_key)
 

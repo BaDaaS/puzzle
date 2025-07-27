@@ -3,9 +3,9 @@ class AbstractRegister(object):
         self.registered = {}
 
     def register(self, i):
-        assert (
-            i.REGISTER_ID is not None
-        ), "REGISTER_ID is required for registration"
+        assert i.REGISTER_ID is not None, (
+            "REGISTER_ID is required for registration"
+        )
         self.registered[i.REGISTER_ID] = i
 
     def get(self, i):
