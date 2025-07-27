@@ -76,7 +76,7 @@ const config: Config = {
       title: 'Puzzle',
       logo: {
         alt: 'Puzzle Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -144,7 +144,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} BaDaaS. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} BaDaaS.`,
     },
     prism: {
       theme: prismThemes.github,
