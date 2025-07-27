@@ -386,10 +386,13 @@ the main page design. All pages must follow these established patterns:
 
 - **Hero Section Structure**: Large logo placement with animated terminal prompt
 - **Monospace Typography**: Fira Code font family throughout all pages
-- **Color Scheme**: Dark background (#0d0d0d) with hacker green (#00ff88) accents
-- **Button Styling**: Uppercase text, glowing hover effects, terminal-inspired design
+- **Color Scheme**: Dark background (#0d0d0d) with hacker green (#00ff88)
+  accents
+- **Button Styling**: Uppercase text, glowing hover effects, terminal-inspired
+  design
 - **Grid Layouts**: Clean, geometric arrangements with proper spacing
-- **Terminal Aesthetics**: Command prompts, scanline effects, and cursor animations
+- **Terminal Aesthetics**: Command prompts, scanline effects, and cursor
+  animations
 
 #### Animation Standards
 
@@ -493,5 +496,5 @@ the main page design. All pages must follow these established patterns:
 - Performance monitoring for animation impact
 
 This comprehensive approach ensures users experience a cohesive, professional
-terminal-inspired interface that reinforces Puzzle's identity as a
-self-hosted, privacy-first asset management solution.
+terminal-inspired interface that reinforces Puzzle's identity as a self-hosted,
+privacy-first asset management solution.

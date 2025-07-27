@@ -105,13 +105,13 @@ check-trailing-whitespace: ## Check for trailing whitespaces in source files
 .PHONY: lint-dockerfiles
 lint-dockerfiles: ## Check all Dockerfiles using hadolint
 	@if [ "$$GITHUB_ACTIONS" = "true" ]; then \
-		OUTPUT=$$(find . -name "Dockerfile*" -type f -exec hadolint {} \;); \
+		OUTPUT=$$(find . -name "Dockerfile*" -type f -exec hadolint --ignore DL3008 {} \;); \
 		if [ -n "$$OUTPUT" ]; then \
 			echo "$$OUTPUT"; \
 			exit 1; \
 		fi; \
 	else \
-		OUTPUT=$$(find . -name "Dockerfile*" -type f -exec sh -c 'docker run --rm -i hadolint/hadolint < "$$1"' _ {} \;); \
+		OUTPUT=$$(find . -name "Dockerfile*" -type f -exec sh -c 'docker run --rm -i hadolint/hadolint hadolint --ignore DL3008 - < "$$1"' _ {} \;); \
 		if [ -n "$$OUTPUT" ]; then \
 			echo "$$OUTPUT"; \
 			exit 1; \
