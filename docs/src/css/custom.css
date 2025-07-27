@@ -220,6 +220,28 @@ body {
   color: var(--puzzle-text-muted);
 }
 
+.footer__bottom {
+  text-align: center;
+}
+
+.footer__copyright {
+  text-align: center;
+  color: var(--puzzle-text-muted);
+}
+
+/* Footer content alignment */
+.footer .container {
+  text-align: center;
+}
+
+.footer .row {
+  justify-content: center;
+}
+
+.footer__col {
+  text-align: center;
+}
+
 /* Code blocks - terminal style */
 .prism-code {
   background: #0a0a0a !important;

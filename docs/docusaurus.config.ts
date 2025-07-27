@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Puzzle',
-  tagline: 'Take control back of your assets in real-time. Crypto, stocks, real estates, T-bills, cash.',
+  title: 'PUZZLE',
+  tagline: 'Cryptography. Resistance. Interoperability.',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -70,8 +70,8 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    // Puzzle social card for sharing
+    image: 'img/puzzle-social-card.png',
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
