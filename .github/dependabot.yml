@@ -42,3 +42,17 @@ updates:
     commit-message:
       prefix: "docker"
       include: "scope"
+
+  # Website dependencies (npm)
+  - package-ecosystem: "npm"
+    directory: "/docs"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "12:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "BaDaaS/puzzle-maintainers"
+    commit-message:
+      prefix: "website"
+      include: "scope"

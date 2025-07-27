@@ -1,0 +1,19 @@
+puzzle:
+  label: Puzzle
+  permalink: /puzzle
+  description: Posts about the Puzzle asset management platform
+
+asset-management:
+  label: Asset Management
+  permalink: /asset-management
+  description: Asset management and financial tracking topics
+
+privacy:
+  label: Privacy
+  permalink: /privacy
+  description: Privacy-focused financial solutions
+
+open-source:
+  label: Open Source
+  permalink: /open-source
+  description: Open source software and community topics

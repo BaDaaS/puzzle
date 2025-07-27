@@ -1,0 +1,8 @@
+badaas:
+  name: BaDaaS Team
+  title: Cryptography Laboratory
+  url: https://badaas.be
+  image_url: https://github.com/BaDaaS.png
+  page: true
+  socials:
+    github: BaDaaS
