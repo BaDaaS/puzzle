@@ -235,14 +235,14 @@ tests = ["PyHamcrest (>=2.0.2)", "mypy", "pytest (>=4.6)", "pytest-benchmark", "
 
 [[package]]
 name = "ccxt"
-version = "4.4.96"
+version = "4.5.1"
 description = "A JavaScript / TypeScript / Python / C# / PHP cryptocurrency trading library with support for 100+ exchanges"
 optional = false
 python-versions = "*"
 groups = ["main"]
 files = [
-    {file = "ccxt-4.4.96-py2.py3-none-any.whl", hash = "sha256:d5acbbdf55d5eeab2c92b3344753e76899b04ae8e49e47021d219527ed756462"},
-    {file = "ccxt-4.4.96.tar.gz", hash = "sha256:4c44537e2ce00a6ca5d42ab5de3510cb9864b80deb2e2ebf40cd6439a3c0571d"},
+    {file = "ccxt-4.5.1-py2.py3-none-any.whl", hash = "sha256:6d54d45d1b8e4702d37276f8e46e1d1507a613d72b9a47ec1bee5bdff0765e16"},
+    {file = "ccxt-4.5.1.tar.gz", hash = "sha256:5a3aed6d12d923cf199cf2a9a91cdb759420dd7570b3c4cc4f1d1b0fdbcc679f"},
 ]
 
 [package.dependencies]
