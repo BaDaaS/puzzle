@@ -15,7 +15,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'pull_request' }}
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Build Docker Image
       run: make docker-build
