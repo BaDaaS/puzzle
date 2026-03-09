@@ -1,5 +1,5 @@
 # Multi-stage Dockerfile for Puzzle Django application
-FROM python:3.13.5-slim as base
+FROM python:3.14.3-slim as base
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
@@ -45,7 +45,7 @@ RUN poetry install --only=main --no-root && \
     rm -rf $POETRY_CACHE_DIR
 
 # Production stage
-FROM python:3.13.5-slim as production
+FROM python:3.14.3-slim as production
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
